@@ -8,7 +8,7 @@ st.write("""
 # Boston House Price Prediction App
 
 * By using this app, we can predict the ***Boston House Price*** 
-based on various aspects.
+based on different paramters.
 
 """)
 
