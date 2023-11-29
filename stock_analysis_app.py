@@ -6,7 +6,7 @@ import plotly.express as px
 from plotly import graph_objs as go
 from datetime import date
 
-st.title("Stock Price App")
+st.title("Stock Price Analysis App")
 st.write("""
 * By using this app,we can view and analyse the stock price data
 of various global companies such as Google, Apple, Amazon and Microsoft etc..
