@@ -108,7 +108,6 @@ df = user_input_features()
 # Print specified input parameters
 st.write('##### Specified Input parameters')
 st.write(df)
-st.divider()
 
 # Build Regression Model
 model = RandomForestRegressor(random_state=1)
