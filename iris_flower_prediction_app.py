@@ -55,10 +55,6 @@ else:
 # Prediction Probability
 predict_prob = model.predict_proba(df)
 
-# Class labels
-
-st.divider()
-
 col1, col2 = st.columns(2)
 with col1:
     st.write("##### Prediction")
@@ -67,6 +63,7 @@ with col1:
 with col2:
     st.write("##### Prediction Probability")
     st.write(predict_prob)
+    # Class labels
     st.info("""
      * 0 - setosa
      * 1 - veriscolor
