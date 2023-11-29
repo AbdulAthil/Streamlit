@@ -106,6 +106,8 @@ with tab12:
                   "SMSN.IL", "SONY", "XIACY", "SPOT", "NFLX", "INTC", "NVDA", text2)
         compare_stocks2 = st.selectbox("Select second dataset", stocks2)
         st.write("Selected dataset: ", compare_stocks2)
+        if compare_stocks2 == "Select":
+            st.write("Select a dataset from above")
         st.divider()
         st.write(f"##### {compare_stocks2} stock values")
         # define a ticker symbol
