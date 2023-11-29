@@ -116,7 +116,7 @@ model.fit(X, Y)
 
 # Apply Model to Make Prediction
 prediction = model.predict(df)
-st.write('##### Prediction of MEDV')
+st.write('##### Price Prediction (MEDV)')
 st.write(prediction)
 st.success(f"The price of the house will be $***{round(float(prediction),3)*1000}*** ")
 st.divider()
