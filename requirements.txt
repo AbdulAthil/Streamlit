@@ -1,9 +1,4 @@
 streamlit
 pandas
 numpy
-sklearn
-matplotlib
 yfinance
-plotly
-base58
-lxml
