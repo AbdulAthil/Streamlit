@@ -59,11 +59,11 @@ col1, col2 = st.columns(2)
 with col1:
     st.write("##### Prediction")
     st.write(iris.target_names[prediction])
-    st.success(f"The type of iris flower is ***{predict}***")
+    st.success(f"The type of iris flower is ***{predict}***.")
 with col2:
     st.write("##### Prediction Probability")
     st.write(predict_prob)
     # Class labels
     st.info("""
-     * 0 - **setosa**, 1 - **veriscolor**, 2 - **virginica**
+     * 0 - **setosa**//, 1 - **veriscolor**//, 2 - **virginica**.
     """)
