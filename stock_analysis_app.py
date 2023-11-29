@@ -84,7 +84,6 @@ with tab12:
         # st.write("Selected dataset: ", compare_stocks1)
         if compare_stocks1 == "Select":
             st.write("Select a dataset from above")
-        button = st.button("Compare")
         st.divider()
         st.write(f"##### {compare_stocks1} stock values")
         # define a ticker symbol
