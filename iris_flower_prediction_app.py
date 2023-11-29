@@ -67,3 +67,4 @@ with col2:
     st.info("""
      * 0 - **setosa**, 1 - **veriscolor**, 2 - **virginica**.
     """)
+st.divider()
