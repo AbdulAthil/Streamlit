@@ -106,7 +106,6 @@ df = user_inputs_features()
 # Print specified input parameters
 st.write("##### Specified Input Parameters")
 st.write(df)
-st.divider()
 
 # Model Building
 model = RandomForestRegressor(random_state=0)
@@ -116,5 +115,5 @@ model.fit(X, Y)
 st.write("##### Price Prediction")
 prediction = model.predict(df)
 st.write(prediction)
-st.success(f"The price of the selected car will be {int(prediction)} rupees")
+st.success(f"The price of the selected car will be {int(prediction)} rupees.")
 st.divider()
