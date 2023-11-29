@@ -34,7 +34,7 @@ with tab11:
     elif selected_stocks == "Select":
         st.write("Select any dataset from above")
     else:
-        st.write("Selected dataset: ", selected_stocks)
+        # st.write("Selected dataset: ", selected_stocks)
         st.divider()
         st.subheader(f"{selected_stocks} stock values")
         # define a ticker symbol
@@ -81,7 +81,9 @@ with tab12:
         stocks1 = ("Select", "AAPL", "GOOGL", "MSFT", "AMZN", "META", "TSLA",
                   "SMSN.IL", "SONY", "XIACY", "SPOT", "NFLX", "INTC", "NVDA", text1)
         compare_stocks1 = st.selectbox("Select first dataset", stocks1)
-        st.write("Selected dataset: ", compare_stocks1)
+        # st.write("Selected dataset: ", compare_stocks1)
+        if compare_stocks1 == "Select":
+            st.write("Select a dataset from above")
         st.divider()
         st.write(f"##### {compare_stocks1} stock values")
         # define a ticker symbol
@@ -105,7 +107,7 @@ with tab12:
         stocks2 = ("Select", "AAPL", "GOOGL", "MSFT", "AMZN", "META", "TSLA",
                   "SMSN.IL", "SONY", "XIACY", "SPOT", "NFLX", "INTC", "NVDA", text2)
         compare_stocks2 = st.selectbox("Select second dataset", stocks2)
-        st.write("Selected dataset: ", compare_stocks2)
+        # st.write("Selected dataset: ", compare_stocks2)
         if compare_stocks2 == "Select":
             st.write("Select a dataset from above")
         st.divider()
