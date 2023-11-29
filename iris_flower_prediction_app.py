@@ -65,7 +65,5 @@ with col2:
     st.write(predict_prob)
     # Class labels
     st.info("""
-     * 0 - setosa
-     * 1 - veriscolor
-     * 2 - virginica
+     * 0 - **setosa**, 1 - **veriscolor**, 2 - **virginica**
     """)
