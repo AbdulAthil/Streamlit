@@ -8,7 +8,7 @@ st.title("""Used Car Sales Price Prediction App
 
 * By using this app, we can predict the price of the car
 with the customer's selected specifications based on the 
-dataset information we already have.
+data from the dataset we already had.
 
 * We can change the input variables as per our requirements.""")
 
