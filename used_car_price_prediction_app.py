@@ -89,7 +89,7 @@ def user_inputs_features():
         colour = 4
     # Odometer selection
     odometer = st.sidebar.slider("Odometer (KM)", X["Odometer (KM)"].min(),
-                                 X["Odometer (KM)"].max(), X["Odometer (KM)"].median(), 1)
+                                 X["Odometer (KM)"].max(), X["Odometer (KM)"].median())
     doors = st.sidebar.slider("Doors", 3, 5, 4)
     # Store user inputs in a dictionary
     data = {"Make": make,
