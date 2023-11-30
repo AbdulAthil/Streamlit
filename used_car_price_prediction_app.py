@@ -109,7 +109,7 @@ st.write("##### Specified Input Parameters")
 st.write(df)
 
 # Model Building
-model = RandomForestRegressor(random_state=0)
+model = RandomForestRegressor(random_state=42)
 model.fit(X, Y)
 
 # Prediction
