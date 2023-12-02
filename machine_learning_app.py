@@ -46,17 +46,7 @@ def build_model(df):
                                 random_state=parameter_random_state)
     rf.fit(x_train, y_train)
 
-    st.write(y.dtypes)
-    st.write(y.unique())
-    try:
-        rf.fit(x_train, y_train)
-    except ValueError as e:
-        st.write(e)
-        st.write("Unique labels in y_train:", np.unique(y_train))
-
-    
-    
-    # Prediction
+     # Prediction
     y_predict_test = rf.predict(x_test)
 
     # Evaluation
@@ -133,7 +123,7 @@ if uploaded_file is not None:
     le = LabelEncoder()
     for column in df.columns:
         if df[column].dtype == "object":
-            df.loc[:, column] = le.fit_transform(df[column])
+            df[column] = le.fit_transform(df[column])
     # st.write(df.head())
     build_model(df)
 
