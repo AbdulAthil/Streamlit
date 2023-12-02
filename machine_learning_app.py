@@ -46,6 +46,16 @@ def build_model(df):
                                 random_state=parameter_random_state)
     rf.fit(x_train, y_train)
 
+    st.write(y.dtypes)
+    st.write(y.unique())
+    try:
+        rf.fit(x_train, y_train)
+    except ValueError as e:
+        st.write(e)
+        st.write("Unique labels in y_train:", np.unique(y_train))
+
+    
+    
     # Prediction
     y_predict_test = rf.predict(x_test)
 
