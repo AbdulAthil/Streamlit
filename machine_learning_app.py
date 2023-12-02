@@ -123,7 +123,7 @@ if uploaded_file is not None:
     le = LabelEncoder()
     for column in df.columns:
         if df[column].dtype == "object":
-            df[column] = le.fit_transform(df[column])
+            df.loc[:, column] = le.fit_transform(df[column])
     # st.write(df.head())
     build_model(df)
 
