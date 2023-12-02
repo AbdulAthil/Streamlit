@@ -51,19 +51,19 @@ def build_model(df):
 
     # Evaluation
     st.write("#### Model Performance")
-    st.write("* ##### Classification Report")
+    st.write("* ###### Classification Report")
     report = metrics.classification_report(y_test, y_predict_test)
     st.text(report)
     st.write("")
-    st.write("* ##### Accuracy")
+    st.write("* ###### Accuracy")
     accuracy = rf.score(x_test, y_test)*100
     st.info(f"Model Accuracy = ***{round(accuracy,3)}***")
     st.write(" ")
-    st.write("* ##### Confusion Matrix")
+    st.write("* ###### Confusion Matrix")
     matrix = metrics.confusion_matrix(y_test, y_predict_test)
     st.table(matrix)
 
-    st.write("* ##### Cross Validation scores")
+    st.write("* ###### Cross Validation scores")
     col1, col2 = st.columns(2)
     with col1:
         cv_acc = cross_val_score(rf, x, y, cv=3, scoring="accuracy")
