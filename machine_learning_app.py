@@ -29,14 +29,14 @@ def build_model(df):
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=(100 - split_size) / 100,
                                                         random_state=parameter_random_state)
 
-    st.markdown("#### Variable details")
+    st.write("#### Variable details")
     st.write("**x - variables(Independent)**")
     st.write(list(x.columns))
     st.write("**y - variable(Dependent)**")
     st.write(y.name)
     st.divider()
 
-    st.markdown("#### Data splits")
+    st.write("#### Data splits")
     st.write("* **Training set**", x_train.shape)
     st.write("* **Test set**", x_test.shape)
     st.divider()
@@ -50,7 +50,7 @@ def build_model(df):
     y_predict_test = rf.predict(x_test)
 
     # Evaluation
-    st.subheader("Model Performance")
+    st.write("#### Model Performance")
     st.write("* ##### Classification Report")
     report = metrics.classification_report(y_test, y_predict_test)
     st.text(report)
@@ -111,7 +111,7 @@ if uploaded_file is not None:
     df_user = pd.read_csv(uploaded_file)
     df = df_user.dropna()
     # st.write(df.isnull().sum())
-    st.subheader("Dataset Information")
+    st.write("#### Dataset Information")
     st.write(df.head())
     st.write("* Dataset Shape :", df.shape)
     cols = []
