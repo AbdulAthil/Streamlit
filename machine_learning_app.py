@@ -68,12 +68,12 @@ def build_model(df):
     with col1:
         cv_acc = cross_val_score(rf, x, y, cv=3, scoring="accuracy")
         st.info(f"* Accuracy score = ***{round(np.mean(cv_acc),4)*100}***")
-        cv_precision = cross_val_score(rf, x, y, cv=3, scoring="precision")
+        cv_precision = cross_val_score(rf, x, y, cv=3, scoring="precision_macro")
         st.info(f"* Precision score = ***{round(np.mean(cv_precision),4)*100}***")
     with col2:
-        cv_recall = cross_val_score(rf, x, y, cv=3, scoring="recall")
+        cv_recall = cross_val_score(rf, x, y, cv=3, scoring="recall_macro")
         st.info(f"* Recall score = ***{round(np.mean(cv_recall),4)*100}***")
-        cv_f1 = cross_val_score(rf, x, y, cv=3, scoring="f1")
+        cv_f1 = cross_val_score(rf, x, y, cv=3, scoring="f1_macro")
         st.info(f"* F1 score = ***{round(np.mean(cv_f1),4)*100}***")
     st.divider()
 
