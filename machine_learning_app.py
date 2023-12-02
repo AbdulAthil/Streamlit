@@ -50,7 +50,7 @@ def build_model(df):
     y_predict_test = rf.predict(x_test)
 
     # Evaluation
-    st.write("#### <Model Performance>")
+    st.write("#### Model Performance")
     st.write("* ###### Classification Report")
     report = metrics.classification_report(y_test, y_predict_test)
     st.text(report)
