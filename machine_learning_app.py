@@ -55,13 +55,13 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     if np.issubdtype(y.dtype, np.number):  
         st.info("Target variable is ***continuous***. Applying ***RandomForestRegressor***.")
         st.divider()
-        st.write(f"Before fitting - x_train.shape: {x_train.shape} and y_train.shape: {y_train.shape})
+        st.write(f"Before fitting - x_train.shape: {x_train.shape} and y_train.shape: {y_train.shape}")
         model = RandomForestRegressor(n_estimators=parameter_n_estimators, random_state=parameter_random_state)
     else:
         st.info("Target variable is ***discrete***. Applying ***RandomForestClassifier***.")
         model = RandomForestClassifier(n_estimators=parameter_n_estimators, random_state=parameter_random_state)
 
-    st.write(f"After fitting - x_train.shape: {x_train.shape} and y_train.shape: {y_train.shape})
+    st.write(f"After fitting - x_train.shape: {x_train.shape} and y_train.shape: {y_train.shape}")
     
     # Checking the target variable distribution
     if len(y.unique()) < 2:
