@@ -70,14 +70,14 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     # Regression metrics        
     accuracy = model.score(x_test, y_test) * 100
     st.info(f"**Model Accuracy** = ***{round(accuracy, 3)}***")
-    st.write("* ***Mean Absolute Error (MAE):***", round(metrics.mean_absolute_error(y_test, y_predict_test), 3))
-    st.write("* ***Mean Squared Error (MSE):***", round(metrics.mean_squared_error(y_test, y_predict_test), 3))
-    st.write("* ***R-squared:***", round(metrics.r2_score(y_test, y_predict_test), 3))
+    st.write("* *Mean Absolute Error (MAE):*", round(metrics.mean_absolute_error(y_test, y_predict_test), 3))
+    st.write("* *Mean Squared Error (MSE):*", round(metrics.mean_squared_error(y_test, y_predict_test), 3))
+    st.write("* *R-squared:*", round(metrics.r2_score(y_test, y_predict_test), 3))
     
     # Cross validation
     st.write("##### Cross Validation scores")
     # Regression metrics for cross-validation
-    st.write("* **R-squared:**", round(np.mean(cross_val_score(model, x, y, cv=3, scoring="r2")), 4))
+    st.write("* *R-squared:*", round(np.mean(cross_val_score(model, x, y, cv=3, scoring="r2")), 4))
     st.success("Model evaluation completed.")
     st.divider()
 
