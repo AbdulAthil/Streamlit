@@ -50,7 +50,7 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     # Model Building
     st.write("#### Model Building")
 
-    st.info(f"***RandomForestRegressor(n_estimators={parameter_n_estimators}, random_state={parameter_random_state})***.")
+    st.info(f"RandomForestRegressor(n_estimators={parameter_n_estimators}, random_state={parameter_random_state}).")
     st.divider()
     model = RandomForestRegressor(n_estimators=parameter_n_estimators, random_state=parameter_random_state)
     
@@ -69,7 +69,7 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
 
     # Regression metrics        
     accuracy = model.score(x_test, y_test) * 100
-    st.info(f"**Model Accuracy** = ***{round(accuracy, 3)}***")
+    st.info(f"*Model Accuracy* = ***{round(accuracy, 3)}***")
     st.write("* *Mean Absolute Error (MAE):*", round(metrics.mean_absolute_error(y_test, y_predict_test), 3))
     st.write("* *Mean Squared Error (MSE):*", round(metrics.mean_squared_error(y_test, y_predict_test), 3))
     st.write("* *R-squared:*", round(metrics.r2_score(y_test, y_predict_test), 3))
