@@ -89,12 +89,10 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     st.write("##### Cross Validation scores")
     col1, col2 = st.columns(2)
     with col1:
-        st.write("* **Accuracy score:**", round(np.mean(cross_val_score(model, x, y, cv=3, scoring="accuracy")), 4))
+        st.write("* **Accuracy score:**", np.mean(cross_val_score(model, x, y, cv=3, scoring="accuracy")))
     with col2:
         if np.issubdtype(y.dtype, np.number):  # Regression metrics for cross-validation
-            st.write("* **R-squared:**", round(np.mean(cross_val_score(model, x, y, cv=3, scoring="r2")), 4))
-        else:  # Classification metrics for cross-validation
-            st.write("* **Precision score:**", round(np.mean(cross_val_score(model, x, y, cv=3, scoring="precision_weighted")), 4))
+            st.write("* **R-squared:**", np.mean(cross_val_score(model, x, y, cv=3, scoring="r2")))
 
     st.success("Model evaluation completed.")
     st.divider()
