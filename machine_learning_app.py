@@ -43,8 +43,8 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
 
     # Data splits
     st.write("#### Data splits")
-    st.write("* **Training set:**", x_train.shape)
-    st.write("* **Test set:**", x_test.shape)
+    st.write("* Training set:", x_train.shape)
+    st.write("* Test set:", x_test.shape)
     st.divider()
 
     # Model Building
