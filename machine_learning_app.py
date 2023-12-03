@@ -91,17 +91,7 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     # Cross validation
     st.write("##### Cross Validation scores")
     # Regression metrics for cross-validation
-    col1, col2 = st.columns(2)
-    with col1:
-        cv_acc = cross_val_score(model, x, y, cv=3, scoring="accuracy")
-        st.write(f"* Accuracy score = ***{round(np.mean(cv_acc),4)*100}***")
-        cv_precision = cross_val_score(model, x, y, cv=3, scoring="precision_macro")
-        st.write(f"* Precision score = ***{round(np.mean(cv_precision),4)*100}***")
-    with col2:
-        cv_recall = cross_val_score(model, x, y, cv=3, scoring="recall_macro")
-        st.write(f"* Recall score = ***{round(np.mean(cv_recall),4)*100}***")
-        cv_f1 = cross_val_score(model, x, y, cv=3, scoring="f1_macro")
-        st.write(f"* F1 score = ***{round(np.mean(cv_f1),4)*100}***")
+    st.write("* **R-squared:**", round(np.mean(cross_val_score(model, x, y, cv=3, scoring="r2")), 4))
     st.success("Model evaluation completed.")
     st.divider()
 
