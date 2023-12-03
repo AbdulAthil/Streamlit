@@ -49,7 +49,7 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     st.divider()
 
     # Model Building
-    st.subheader("Model Building")
+    st.write("#### Model Building")
 
     # Check if the dtype is numeric (continuous) or discrete
     if np.issubdtype(y.dtype, np.number):  
@@ -71,7 +71,7 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     y_predict_test = model.predict(x_test)
 
     # Evaluation
-    st.subheader("Model Performance")
+    st.write("#### Model Performance")
 
    
     if np.issubdtype(y.dtype, np.number):  
@@ -114,7 +114,9 @@ parameter_random_state = st.sidebar.slider('Seed number (random_state)', 0, 1000
 missing_value_strategy = st.sidebar.selectbox("Missing Value Strategy", ["Drop Rows with Missing Values", "Fill with Mean", "Fill with Median", "Fill with Zero"])
 
 # Main panel
+st.divider()
 st.title("Machine Learning App")
+st.divider()
 
 # Upload file 
 if uploaded_file is not None:
@@ -132,7 +134,7 @@ if uploaded_file is not None:
             df[column] = le.fit_transform(df[column])
 
     # Target selection from user
-    st.write("### Target Column Selection")
+    st.write("#### Target Column Selection")
     st.write("If you don't select any specific column, "
              "the *model* will take the first column as target column by default.")
     target_column = st.selectbox("Select Target column", df.columns)
