@@ -137,10 +137,7 @@ else:
         st.markdown('The Diabetes dataset is used as an example.')
         st.write(df.head())
         st.write("* Dataset Shape :", df.shape)
-        cols = []
-        for columns in df.columns:
-            cols.append(columns)
-        st.write(f"* Columns : {cols}")
+        st.write(f"* Columns : {df.columns}")
         # st.write(df.describe().head(3))
 
         st.divider()
