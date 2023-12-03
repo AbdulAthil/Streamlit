@@ -83,11 +83,7 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
         st.write("* ***R-squared:***", round(metrics.r2_score(y_test, y_predict_test), 3))
     else:  
         # Classification metrics
-        st.write("* **Classification Report:**")
-        st.text(metrics.classification_report(y_test, y_predict_test))
-        st.write("* **Accuracy:**", round(metrics.accuracy_score(y_test, y_predict_test), 3))
-        st.write("* **Confusion Matrix:**")
-        st.table(metrics.confusion_matrix(y_test, y_predict_test))
+        st.warning("Target variable is not discrete. Classification metrics are not suitable.")
 
     # Cross validation
     st.write("##### Cross Validation scores")
