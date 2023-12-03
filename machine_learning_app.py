@@ -24,7 +24,6 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
         df = df.fillna(df.median())
     elif missing_value_strategy == "Fill with Zero":
         df = df.fillna(0)
-    st.write(df.head())
 
     # Data preprocessing
     x = df.drop(columns=[target_column])
@@ -51,17 +50,9 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     # Model Building
     st.write("#### Model Building")
 
-    # Check if the dtype is numeric (continuous) or discrete
-    if np.issubdtype(y.dtype, np.number):  
-        st.info("Target variable is ***continuous***. Applying ***RandomForestRegressor***.")
-        st.divider()
-        st.write(f"Before fitting - x_train.shape: {x_train.shape} and y_train.shape: {y_train.shape}")
-        model = RandomForestRegressor(n_estimators=parameter_n_estimators, random_state=parameter_random_state)
-    else:
-        st.info("Target variable is ***discrete***. Applying ***RandomForestClassifier***.")
-        model = RandomForestClassifier(n_estimators=parameter_n_estimators, random_state=parameter_random_state)
-
-    st.write(f"After fitting - x_train.shape: {x_train.shape} and y_train.shape: {y_train.shape}")
+    st.info(f"***RandomForestRegressor(n_estimators={parameter_n_estimators}, random_state={parameter_random_state})***.")
+    st.divider()
+    model = RandomForestRegressor(n_estimators=parameter_n_estimators, random_state=parameter_random_state)
     
     # Checking the target variable distribution
     if len(y.unique()) < 2:
@@ -76,18 +67,13 @@ def build_and_evaluate_model(df, target_column, missing_value_strategy):
     # Evaluation
     st.write("#### Model Performance")
 
-   
-    if np.issubdtype(y.dtype, np.number):  
-        # Regression metrics        
-        accuracy = model.score(x_test, y_test) * 100
-        st.info(f"**Model Accuracy** = ***{round(accuracy, 3)}***")
-        st.write("* ***Mean Absolute Error (MAE):***", round(metrics.mean_absolute_error(y_test, y_predict_test), 3))
-        st.write("* ***Mean Squared Error (MSE):***", round(metrics.mean_squared_error(y_test, y_predict_test), 3))
-        st.write("* ***R-squared:***", round(metrics.r2_score(y_test, y_predict_test), 3))
-    else:  
-        # Classification metrics
-        st.warning("Target variable is not discrete. Classification metrics are not suitable.")
-
+    # Regression metrics        
+    accuracy = model.score(x_test, y_test) * 100
+    st.info(f"**Model Accuracy** = ***{round(accuracy, 3)}***")
+    st.write("* ***Mean Absolute Error (MAE):***", round(metrics.mean_absolute_error(y_test, y_predict_test), 3))
+    st.write("* ***Mean Squared Error (MSE):***", round(metrics.mean_squared_error(y_test, y_predict_test), 3))
+    st.write("* ***R-squared:***", round(metrics.r2_score(y_test, y_predict_test), 3))
+    
     # Cross validation
     st.write("##### Cross Validation scores")
     # Regression metrics for cross-validation
@@ -106,7 +92,6 @@ parameter_random_state = st.sidebar.slider('Seed number (random_state)', 0, 1000
 missing_value_strategy = st.sidebar.selectbox("Missing Value Strategy", ["Drop Rows with Missing Values", "Fill with Mean", "Fill with Median", "Fill with Zero"])
 
 # Main panel
-st.divider()
 st.title("Machine Learning App")
 st.divider()
 
@@ -127,7 +112,7 @@ if uploaded_file is not None:
 
     # Target selection from user
     st.write("#### Target Column Selection")
-    st.write("If you don't select any specific column, "
+    st.caption("If you don't select any specific column, "
              "the *model* will take the first column as target column by default.")
     target_column = st.selectbox("Select Target column", df.columns)
     st.divider()
