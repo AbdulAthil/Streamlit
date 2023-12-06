@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    text-align: center;
+}
+h1{
+    color:red;
+}
+h3{
+    color:red;
+    font-size:  12pt;
+    border-radius: 75%;
+}
+
+.stButton>button {
+    color: green;
+    border-radius: 50%;
+    height: 10em;
+    width: 10em;
+    position: relative;
+}
