@@ -5,6 +5,5 @@ yfinance
 matplotlib
 scikit-learn
 plotly
-base64
 datetime
 time
