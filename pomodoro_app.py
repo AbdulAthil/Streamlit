@@ -22,7 +22,7 @@ def run_timer(duration):
         mins, secs = divmod(duration, 60)
         timer = '{:02d}:{:02d}'.format(mins, secs)
         st.header(f"⏳ {timer}")
-        time.sleep(0.01)
+        time.sleep(1)
         duration -= 1
 
     autoplay_audio("alarm.mp3")
