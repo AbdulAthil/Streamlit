@@ -5,5 +5,3 @@ yfinance
 matplotlib
 scikit-learn
 plotly
-datetime
-time
