@@ -103,5 +103,6 @@ if uploaded_file is not None:
         with col2:
             st.bar_chart(probability_data.set_index('Pathology Class'))
         st.success(f'Predicted Pathology Class: ***{title}***')
+        st.divider()
 else:
     st.warning("Please upload an image to proceed.") 
