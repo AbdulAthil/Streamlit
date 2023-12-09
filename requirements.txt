@@ -5,3 +5,6 @@ yfinance
 matplotlib
 scikit-learn
 plotly
+torch
+torchvision
+operator
