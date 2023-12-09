@@ -102,13 +102,5 @@ if uploaded_file is not None:
         with col2:
             st.bar_chart(probability_data.set_index('Pathology Class'))
         st.success(f'Predicted Pathology Class: ***{title}***')
-
-        # Display the original and predicted images
-        # st.subheader('Original Image:')
-        # st.image(deprocess(preprocess_image(image)), caption='Original Image.', use_column_width=True)
-
-        # st.subheader('Predicted Image:')
-        # st.image(deprocess(image), caption='Predicted Image.', use_column_width=True)
-
 else:
-    st.warning("Upload an image for Prediction") 
+    st.warning("Please upload an image to proceed.") 
