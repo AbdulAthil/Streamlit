@@ -9,6 +9,8 @@ import pandas as pd
 from torch import nn
 from torchvision import models
 
+st.set_page_config(page_title='Lung Disease Prediction App')
+
 # Set device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
