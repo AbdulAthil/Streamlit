@@ -87,7 +87,7 @@ if uploaded_file is not None:
 
     # Make predictions when the button is clicked
     if st.button('Predict'):
-        st.info(f"**Pathology List**: *{pathology_list}*")
+        # st.info(f"**Pathology List**: *{pathology_list}*")
         prediction = predict(image)
         class_labels = list(np.where(prediction == prediction.max())[0])
         title = itemgetter(*class_labels)(pathology_list)
