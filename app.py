@@ -85,7 +85,7 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
 if uploaded_file is not None:
     # Display the uploaded image
     image = Image.open(uploaded_file)
-    st.image(image, caption='Uploaded Image.', width=250)
+    st.image(image, caption='Uploaded Image.', width=280)
 
     # Make predictions when the button is clicked
     if st.button('Predict'):
