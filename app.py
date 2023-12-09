@@ -96,7 +96,7 @@ if uploaded_file is not None:
         # Display the probability values
         # st.write('Ground Truth : {}'.format(prediction))
         probability_data = pd.DataFrame({'Pathology Class': pathology_list, 'Probability': prediction})
-        st.write("## Prediction probabilities")
+        st.write("#### Prediction probabilities")
         col1, col2 = st.columns([1.6, 2.2])
         with col1:
             st.write(probability_data)
