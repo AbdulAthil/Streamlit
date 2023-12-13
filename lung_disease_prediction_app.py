@@ -63,7 +63,7 @@ model.fc = nn.Sequential(
 )
 
 # Load the state_dict, skipping layers with mismatched keys
-state_dict_path = r'C:\Users\USER\Data_Science\Pneumonia_model.pt'
+state_dict_path = 'Pneumonia_model.pt'
 state_dict = torch.load(state_dict_path, map_location=device)
 model_dict = model.state_dict()
 
