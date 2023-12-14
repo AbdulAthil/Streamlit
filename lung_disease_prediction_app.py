@@ -85,9 +85,9 @@ pathology_list = ['Cardiomegaly', 'Emphysema', 'Effusion', 'Hernia', 'Nodule', '
 
 # Streamlit app
 st.title('Lung Disease Prediction App')
+st.info("Upload a chest X-ray image to proceed")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
-st.info("Upload a chest X-ray image to proceed")
 
 if uploaded_file is not None:
     # Display the uploaded image
@@ -126,4 +126,4 @@ if uploaded_file is not None:
             st.success(f'Predicted Pathology Class: ***{title}***')
 
     else:
-        st.error("Upload a Chest X-ray image to proceed")
+        st.error("Uploaded image is not a proper chest X-ray image. Please upload a chest X-ray image to proceed.")
