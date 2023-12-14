@@ -87,6 +87,7 @@ pathology_list = ['Cardiomegaly', 'Emphysema', 'Effusion', 'Hernia', 'Nodule', '
 st.title('Lung Disease Prediction App')
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
+st.info("Upload a chest X-ray image to proceed")
 
 if uploaded_file is not None:
     # Display the uploaded image
